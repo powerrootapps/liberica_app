@@ -19,17 +19,28 @@
       margin-bottom: 10px;
     }
     .lang-switch button {
-      padding: 8px 16px;
-      margin: 0 5px;
-      border: 1px solid #ccc;
-      background: #fff;
-      cursor: pointer;
-    }
-    .lang-switch button.active {
-      background: #222;
-      color: #fff;
-      border-color: #222;
-    }
+	  padding: 10px 20px;
+	  margin: 0 6px;
+	  border-radius: 20px;
+	  border: 1px solid #7F9C66;
+	  background: #ffffff;
+	  color: #7F9C66;
+	  font-size: 14px;
+	  font-weight: 500;
+	  cursor: pointer;
+	  transition: all 0.25s ease;
+	}
+
+	.lang-switch button:hover {
+	  background: #eef3eb;
+	}
+
+	.lang-switch button.active {
+	  background: #7F9C66;
+	  color: #ffffff;
+	  border-color: #7F9C66;
+	  box-shadow: 0 4px 10px rgba(127, 156, 102, 0.35);
+	}
     .policy-section {
       display: none;
       text-align: center;
@@ -37,37 +48,55 @@
     .policy-section.active {
       display: block;
     }
-    img {
-      max-width: 100%;
-      margin-bottom: 20px;
-      border: 1px solid #ddd;
-    }
+    .policy-section {
+	  display: none;
+	  text-align: center;
+	}
+
+	.policy-section.active {
+	  display: block;
+	}
+
+	.policy-section img {
+	  max-width: 100%;
+	  margin: 0 auto 24px;
+	  border-radius: 10px;
+	  border: 1px solid #e0e0e0;
+	  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+	  background: #ffffff;
+	}
+	.container {
+	  max-width: 860px;
+	  margin: 0 auto;
+	  padding: 0 12px;
+	}
   </style>
 </head>
 <body>
-<div class="lang-switch">
-  <button id="btn-en" class="active" onclick="showLang('en')">English</button>
-  <button id="btn-bm" onclick="showLang('bm')">Bahasa Melayu</button>
-</div>
+<div class="container">
+	<div class="lang-switch">
+	  <button id="btn-en" class="active" onclick="showLang('en')">English</button>
+	  <button id="btn-bm" onclick="showLang('bm')">Bahasa Melayu</button>
+	</div>
 
-<!-- English -->
-<div id="policy-en" class="policy-section active">
-  <img src="images/en/policy-01.png" alt="Privacy Policy English Page 1">
-  <img src="images/en/policy-02.png" alt="Privacy Policy English Page 1">
-  <img src="images/en/policy-03.png" alt="Privacy Policy English Page 1">
-  <img src="images/en/policy-04.png" alt="Privacy Policy English Page 1">
-  <img src="images/en/policy-05.png" alt="Privacy Policy English Page 1">
-</div>
+	<!-- English -->
+	<div id="policy-en" class="policy-section active">
+	  <img src="images/en/policy-01.png" alt="Privacy Policy English Page 1">
+	  <img src="images/en/policy-02.png" alt="Privacy Policy English Page 2">
+	  <img src="images/en/policy-03.png" alt="Privacy Policy English Page 3">
+	  <img src="images/en/policy-04.png" alt="Privacy Policy English Page 4">
+	  <img src="images/en/policy-05.png" alt="Privacy Policy English Page 5">
+	</div>
 
-<!-- Bahasa Melayu -->
-<div id="policy-bm" class="policy-section">
-  <img src="images/bm/policy-06.png" alt="Privacy Policy BM Page 1">
-  <img src="images/bm/policy-07.png" alt="Privacy Policy BM Page 2">
-  <img src="images/bm/policy-08.png" alt="Privacy Policy BM Page 3">
-  <img src="images/bm/policy-09.png" alt="Privacy Policy BM Page 4">
-  <img src="images/bm/policy-10.png" alt="Privacy Policy BM Page 5">
+	<!-- Bahasa Melayu -->
+	<div id="policy-bm" class="policy-section">
+	  <img src="images/bm/policy-06.png" alt="Privacy Policy BM Page 1">
+	  <img src="images/bm/policy-07.png" alt="Privacy Policy BM Page 2">
+	  <img src="images/bm/policy-08.png" alt="Privacy Policy BM Page 3">
+	  <img src="images/bm/policy-09.png" alt="Privacy Policy BM Page 4">
+	  <img src="images/bm/policy-10.png" alt="Privacy Policy BM Page 5">
+	</div>
 </div>
-
 <script>
   function showLang(lang) {
     document.getElementById('policy-en').classList.remove('active');
